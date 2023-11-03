@@ -21,7 +21,10 @@ app.use(cookieParser())
 
 app.use('/api/users', userRouter)
 
-app.get('/', (req, res) => res.send('Server is ready'));
+app.get('/', (req, res) => res.send({
+  status: 'OK',
+  message: 'Server is ready.'
+}));
 
 app.use(notFound)
 app.use(errorHandler)
