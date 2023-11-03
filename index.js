@@ -16,15 +16,11 @@ const app = express()
 
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
+app.use(express.static('public'))
 
 app.use(cookieParser())
 
 app.use('/api/users', userRouter)
-
-app.get('/', (req, res) => res.send({
-  status: 'OK',
-  message: 'Server is ready.'
-}));
 
 app.use(notFound)
 app.use(errorHandler)

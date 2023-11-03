@@ -3,6 +3,10 @@ import { authUser, getUserProfile, logoutUser, registerUser, updateUserProfile }
 import { protect } from '../middleware/authMiddleware.js'
 const router = express.Router()
 
+router.get('/', (req, res) => res.send({
+  status: 'OK',
+  message: 'Server is ready.'
+}));
 router.post('/auth', authUser)
 router.post('/register', registerUser)
 router.post('/logout', logoutUser)
