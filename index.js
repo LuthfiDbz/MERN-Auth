@@ -20,7 +20,7 @@ app.use(express.static('public'))
 
 app.use(cookieParser())
 
-app.use('/api/users', userRouter)
+app.use('/', userRouter)
 
 app.use(notFound)
 app.use(errorHandler)
